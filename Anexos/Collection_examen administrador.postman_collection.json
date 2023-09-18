@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "10e6e7e1-80a2-415f-a816-a85ce7d929b5",
+		"name": "Collection - examen test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20708961"
+	},
+	"item": [
+		{
+			"name": "Ver examen",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1989/exam/getExam/01970",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1989",
+					"path": [
+						"exam",
+						"getExam",
+						"01970"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resolver examen",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " [\r\n            \"Mexico\",\r\n            \"Japón\",\r\n            \"Asia\",\r\n            \"amazonas\",\r\n            \"leticia\"\r\n]\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1989/exam/resolveExam/1094973",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1989",
+					"path": [
+						"exam",
+						"resolveExam",
+						"1094973"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver calificacion",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:1989/grade/1094973",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1989",
+					"path": [
+						"grade",
+						"1094973"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver citacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1989/assignment/01970",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1989",
+					"path": [
+						"assignment",
+						"01970"
+					]
+				},
+				"description": "se debe agregar el nit del estudiante"
+			},
+			"response": []
+		},
+		{
+			"name": "Añadir estudiante",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nit_student\" : \"01970\",\r\n    \"name\": \"Gia\",\r\n    \"age\": \"2\",\r\n    \"city\": \"Armenia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1989/student/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1989",
+					"path": [
+						"student",
+						"add"
+					]
+				},
+				"description": "se debe agregar los datos en el body"
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar preguntas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"header\": \"¿A qué país pertenece Groenlandia?\",\r\n    \"options\": [\r\n        \"Dinamarca\",\r\n        \"Rusia\",\r\n        \"USA\",\r\n        \"Etiopía\"\r\n        ],\r\n    \"optionValid\": \"Dinamarca\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1989/questions/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1989",
+					"path": [
+						"questions",
+						"add"
+					]
+				},
+				"description": "se debe agregar la informacion en el body\r\n"
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar estudiante",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1989/student/01970",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1989",
+					"path": [
+						"student",
+						"01970"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver preguntas en el sistema",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1989/questions/getAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1989",
+					"path": [
+						"questions",
+						"getAll"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
